@@ -13,9 +13,9 @@ export interface IPeopleState {
   fetchingFailed: boolean;
 }
 
-const FETCHING_PERSON = "PEOPLE/FETCHING_PERSON";
-const FETCHING_PERSON_SUCCESS = "PEOPLE/FETCHING_PERSON_SUCCESS";
-const FETCHING_PERSON_ERROR = "PEOPLE/FETCHING_PERSON_ERROR";
+export const FETCHING_PERSON = "PEOPLE/FETCHING_PERSON";
+export const FETCHING_PERSON_SUCCESS = "PEOPLE/FETCHING_PERSON_SUCCESS";
+export const FETCHING_PERSON_ERROR = "PEOPLE/FETCHING_PERSON_ERROR";
 
 const initialState: IPeopleState = {
   fetching: false,
@@ -25,6 +25,22 @@ const initialState: IPeopleState = {
 
 export const peopleReducer = (state = initialState, action: Action<string>) => {
   switch (action.type) {
+    case FETCHING_PERSON:
+      return {
+        ...state,
+        fetching: true,
+      };
+    case FETCHING_PERSON_SUCCESS:
+      return {
+        ...state,
+        fetching: false,
+        person: (action as any).payload,
+      };
+    case FETCHING_PERSON_ERROR:
+      return {
+        ...state,
+        fetching: false,
+      };
     default:
       return state;
   }
