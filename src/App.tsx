@@ -3,6 +3,8 @@ import People from "./people/components/people";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Person from "./people/components/person";
+import DisplayClock from "./clock/components/display-clock";
+import UpdateClock from "./clock/components/update-clock";
 
 function App() {
   return (
@@ -18,6 +20,10 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      {/* <div>
+        <DisplayClock />
+        <UpdateClock />
+      </div> */}
     </div>
   );
 }
