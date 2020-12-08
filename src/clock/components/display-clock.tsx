@@ -4,7 +4,7 @@ import { IApplicationState } from "../../redux/root-reducer";
 
 const DisplayClock: React.FC = () => {
   const { currentTime } = useSelector((state: IApplicationState) => ({
-    currentTime: `${state.clock.hour}:${state.clock.minute}`,
+    currentTime: `${state.clock.hour}:${state.clock.minute}:${state.clock.second}`,
   }));
   return (
     <div>

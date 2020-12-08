@@ -4,7 +4,6 @@ import {
   FETCHING_PERSON_SUCCESS,
   IPerson,
 } from "./people-reducer";
+// "https://swapi.dev/api/people"
 
-export const fetchPerson = (id: string) => async (
-  dispatch: (action: any) => void
-) => {};
+export function fetchPerson(id: string) {}

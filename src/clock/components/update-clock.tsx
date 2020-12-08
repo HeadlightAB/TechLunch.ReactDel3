@@ -12,6 +12,7 @@ const UpdateClock: React.FC = () => {
         payload: {
           hour: new Date().getHours(),
           minute: new Date().getMinutes(),
+          second: new Date().getSeconds(),
         },
       });
     }, 1000);
