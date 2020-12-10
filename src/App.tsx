@@ -20,10 +20,10 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      {/* <div>
+      <div>
         <DisplayClock />
         <UpdateClock />
-      </div> */}
+      </div>
     </div>
   );
 }

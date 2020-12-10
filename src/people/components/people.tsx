@@ -9,6 +9,15 @@ const People: React.FC = () => {
 
   const fetchPersons = async () => {
     // "https://swapi.dev/api/people"
+    setIsFetching(true);
+    const response = await fetch("https://swapi.dev/api/people");
+
+    if (response.ok) {
+      const data: { results: IPerson[] } = await response.json();
+      setPeople(data.results);
+    }
+
+    setIsFetching(false);
   };
 
   React.useEffect(() => {
